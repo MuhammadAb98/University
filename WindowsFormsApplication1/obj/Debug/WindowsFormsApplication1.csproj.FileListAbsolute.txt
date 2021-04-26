@@ -9,3 +9,20 @@ C:\Users\Ab\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\
 C:\Users\Ab\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\Ab\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
 C:\Users\Ab\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pageDel.resources
+C:\Users\Ab\Desktop\University - Copy\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Ab\Desktop\University - Copy\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Ab\Desktop\University - Copy\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Ab\Desktop\University - Copy\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Ab\Desktop\University - Copy\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Ab\Desktop\University - Copy\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Ab\Desktop\University - Copy\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\Ab\Desktop\University - Copy\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pageDel.resources
+C:\Users\Ab\Desktop\University - Copy\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Ab\Desktop\University - Copy\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\Ab\Desktop\University - Copy\WindowsFormsApplication1\bin\Debug\ClosedXML.dll
+C:\Users\Ab\Desktop\University - Copy\WindowsFormsApplication1\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\Ab\Desktop\University - Copy\WindowsFormsApplication1\bin\Debug\ExcelNumberFormat.dll
+C:\Users\Ab\Desktop\University - Copy\WindowsFormsApplication1\bin\Debug\ClosedXML.pdb
+C:\Users\Ab\Desktop\University - Copy\WindowsFormsApplication1\bin\Debug\ClosedXML.xml
+C:\Users\Ab\Desktop\University - Copy\WindowsFormsApplication1\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\Ab\Desktop\University - Copy\WindowsFormsApplication1\bin\Debug\ExcelNumberFormat.xml

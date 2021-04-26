@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.lblownername = new System.Windows.Forms.Label();
             this.lblnamecus = new System.Windows.Forms.Label();
             this.txtname = new System.Windows.Forms.TextBox();
@@ -35,18 +37,29 @@
             this.txttypework = new System.Windows.Forms.TextBox();
             this.lblworktype = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtcharges = new System.Windows.Forms.TextBox();
             this.lblcharges = new System.Windows.Forms.Label();
             this.txtcontactnumber = new System.Windows.Forms.TextBox();
             this.DataBaseView = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.personIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cellDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chargesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bagBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.myData = new WindowsFormsApplication1.myData();
             this.btnloaddata = new System.Windows.Forms.Button();
             this.btndeluser = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.txtsearch = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.bagTableAdapter3 = new WindowsFormsApplication1.myDataTableAdapters.bagTableAdapter();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataBaseView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bagBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myData)).BeginInit();
             this.SuspendLayout();
             // 
             // lblownername
@@ -55,9 +68,9 @@
             this.lblownername.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblownername.Location = new System.Drawing.Point(562, 9);
             this.lblownername.Name = "lblownername";
-            this.lblownername.Size = new System.Drawing.Size(146, 25);
+            this.lblownername.Size = new System.Drawing.Size(134, 25);
             this.lblownername.TabIndex = 0;
-            this.lblownername.Text = "Owner Name";
+            this.lblownername.Text = "Christopher";
             this.lblownername.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblnamecus
@@ -128,6 +141,18 @@
             this.groupBox1.Text = "Add Customer";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.OrangeRed;
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Location = new System.Drawing.Point(282, 231);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(179, 45);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Reset";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.LawnGreen;
@@ -166,25 +191,69 @@
             // 
             // DataBaseView
             // 
+            this.DataBaseView.AllowUserToAddRows = false;
+            this.DataBaseView.AllowUserToDeleteRows = false;
+            this.DataBaseView.AutoGenerateColumns = false;
             this.DataBaseView.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.DataBaseView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataBaseView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.personIDDataGridViewTextBoxColumn,
+            this.customerNameDataGridViewTextBoxColumn,
+            this.cellDataGridViewTextBoxColumn,
+            this.workTypeDataGridViewTextBoxColumn,
+            this.chargesDataGridViewTextBoxColumn});
+            this.DataBaseView.DataSource = this.bagBindingSource3;
             this.DataBaseView.Location = new System.Drawing.Point(662, 112);
             this.DataBaseView.Name = "DataBaseView";
+            this.DataBaseView.ReadOnly = true;
             this.DataBaseView.Size = new System.Drawing.Size(498, 204);
             this.DataBaseView.TabIndex = 8;
             this.DataBaseView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataBaseView_CellContentClick);
             // 
-            // button1
+            // personIDDataGridViewTextBoxColumn
             // 
-            this.button1.BackColor = System.Drawing.Color.OrangeRed;
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(282, 231);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(179, 45);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Reset";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.personIDDataGridViewTextBoxColumn.DataPropertyName = "Person_ID";
+            this.personIDDataGridViewTextBoxColumn.HeaderText = "Person_ID";
+            this.personIDDataGridViewTextBoxColumn.Name = "personIDDataGridViewTextBoxColumn";
+            this.personIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // customerNameDataGridViewTextBoxColumn
+            // 
+            this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "Customer_Name";
+            this.customerNameDataGridViewTextBoxColumn.HeaderText = "Customer_Name";
+            this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
+            this.customerNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cellDataGridViewTextBoxColumn
+            // 
+            this.cellDataGridViewTextBoxColumn.DataPropertyName = "Cell";
+            this.cellDataGridViewTextBoxColumn.HeaderText = "Cell";
+            this.cellDataGridViewTextBoxColumn.Name = "cellDataGridViewTextBoxColumn";
+            this.cellDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // workTypeDataGridViewTextBoxColumn
+            // 
+            this.workTypeDataGridViewTextBoxColumn.DataPropertyName = "Work_Type";
+            this.workTypeDataGridViewTextBoxColumn.HeaderText = "Work_Type";
+            this.workTypeDataGridViewTextBoxColumn.Name = "workTypeDataGridViewTextBoxColumn";
+            this.workTypeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // chargesDataGridViewTextBoxColumn
+            // 
+            this.chargesDataGridViewTextBoxColumn.DataPropertyName = "Charges";
+            this.chargesDataGridViewTextBoxColumn.HeaderText = "Charges";
+            this.chargesDataGridViewTextBoxColumn.Name = "chargesDataGridViewTextBoxColumn";
+            this.chargesDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bagBindingSource3
+            // 
+            this.bagBindingSource3.DataMember = "bag";
+            this.bagBindingSource3.DataSource = this.myData;
+            // 
+            // myData
+            // 
+            this.myData.DataSetName = "myData";
+            this.myData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnloaddata
             // 
@@ -215,7 +284,7 @@
             // 
             this.button3.BackColor = System.Drawing.Color.GreenYellow;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(662, 428);
+            this.button3.Location = new System.Drawing.Point(662, 469);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(498, 44);
             this.button3.TabIndex = 11;
@@ -226,10 +295,27 @@
             // txtsearch
             // 
             this.txtsearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtsearch.Location = new System.Drawing.Point(662, 387);
+            this.txtsearch.Location = new System.Drawing.Point(662, 428);
             this.txtsearch.Name = "txtsearch";
             this.txtsearch.Size = new System.Drawing.Size(498, 35);
             this.txtsearch.TabIndex = 12;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Chartreuse;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(662, 379);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(498, 43);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Export";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // bagTableAdapter3
+            // 
+            this.bagTableAdapter3.ClearBeforeFill = true;
             // 
             // Form1
             // 
@@ -237,6 +323,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1206, 525);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.txtsearch);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btndeluser);
@@ -244,11 +331,16 @@
             this.Controls.Add(this.DataBaseView);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblownername);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Record Keeper";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataBaseView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bagBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,6 +365,15 @@
         private System.Windows.Forms.Button btndeluser;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox txtsearch;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn personIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cellDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn workTypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chargesDataGridViewTextBoxColumn;
+        private myData myData;
+        private System.Windows.Forms.BindingSource bagBindingSource3;
+        private myDataTableAdapters.bagTableAdapter bagTableAdapter3;
     }
 }
 

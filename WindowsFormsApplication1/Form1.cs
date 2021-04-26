@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using ClosedXML.Excel;
 
 namespace WindowsFormsApplication1
 {
@@ -134,5 +135,42 @@ namespace WindowsFormsApplication1
 
             sqlcon.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel workbook|*.xlsx" })
+ {
+     if(sfd.ShowDialog()==DialogResult.OK)
+     {
+         try
+         {
+             using(XLWorkbook workbook=new XLWorkbook())
+             {
+                // workbook.Worksheets.Add(this.bagBindingSource2.Bag.CopyToDataTable(),"Bag");
+
+                 workbook.Worksheets.Add(this.myData.bag.CopyToDataTable(), "bag");
+
+                 workbook.SaveAs(sfd.FileName);
+             }
+             MessageBox.Show("Exported");
+         }
+         catch(Exception)
+         {
+             MessageBox.Show("Contact 03207677525", "Error In code", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+         }
+     }
+ }
+        
+ }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'myData.bag' table. You can move, or remove it, as needed.
+            this.bagTableAdapter3.Fill(this.myData.bag);
+            // TODO: This line of code loads data into the 'dgv.bag' table. You can move, or remove it, as needed.
+           
+
+        } 
     }
 }
